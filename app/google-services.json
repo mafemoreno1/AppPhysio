@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "886936298104",
+    "project_id": "fisioplus-632ac",
+    "storage_bucket": "fisioplus-632ac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886936298104:android:c96f0c9ded53736e1e838d",
+        "android_client_info": {
+          "package_name": "com.example.appphysio"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5J5FG6PixDL7pmfcdp99dxLYzhPF_36U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

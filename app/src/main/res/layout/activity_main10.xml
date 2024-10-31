@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#A0BBD4"
+    android:padding="16dp"
+    android:gravity="center_horizontal">
+
+
+    <!-- Icono Flecha en Esquina Superior Izquierda -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:background="@android:color/transparent"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            app:tint="#28336F"
+            android:contentDescription="Regresar" />
+    </FrameLayout>
+
+    <!-- Ícono superior centrado como ImageView -->
+    <ImageView
+        android:id="@+id/imageButtonTop"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        app:srcCompat="@drawable/lfisio" />
+
+
+    <!-- Contenedor de "Notificaciones" centrado en el diseño -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="480dp"
+        android:layout_gravity="center"
+        android:background="#D4E6F1"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Notificaciones"
+            android:textColor="#1F2A44"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Barra de iconos en la parte inferior con nombres debajo de cada ícono -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <!-- Icono de Inicio con nombre -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButtonHome"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="Icono de Inicio"
+                app:srcCompat="@drawable/baseline_home_24"
+                app:tint="#28336F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="Inicio"
+                android:textColor="#28336F"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Icono de Notificaciones con nombre -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/imageButtonNotifications"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="Icono de Notificaciones"
+                app:srcCompat="@drawable/baseline_notifications_24"
+                app:tint="#28336F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Notificaciones"
+                android:textColor="#28336F"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Icono de Agenda con nombre -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginEnd="8dp">
+
+            <ImageButton
+                android:id="@+id/imageButtonAgenda"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="Icono de Agenda"
+                app:srcCompat="@drawable/baseline_library_books_24"
+                app:tint="#28336F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="Agenda"
+                android:textColor="#28336F"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- Icono de Perfil con nombre -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/imageButtonProfile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?android:selectableItemBackgroundBorderless"
+                android:contentDescription="Icono de Perfil"
+                app:srcCompat="@drawable/baseline_person_24"
+                app:tint="#28336F" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:text="Perfil"
+                android:textColor="#28336F"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
