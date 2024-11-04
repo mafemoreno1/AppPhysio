@@ -15,10 +15,10 @@ class MainActivity10 : AppCompatActivity() {
 
         // Inicializa los íconos
         val arrowIcon = findViewById<ImageView>(R.id.imageView7)
-        val imageButtonHome: ImageButton = findViewById(R.id.imageButtonHome)
-        val imageButtonNotifications: ImageButton = findViewById(R.id.imageButtonNotifications)
+        val imageButtonHome: ImageButton = findViewById(R.id.imageButtonInicio)
+        val imageButtonNotifications: ImageButton = findViewById(R.id.imageButtonNotificaciones)
         val imageButtonAgenda: ImageButton = findViewById(R.id.imageButtonAgenda)
-        val imageButtonProfile: ImageButton = findViewById(R.id.imageButtonProfile)
+        val imageButtonProfile: ImageButton = findViewById(R.id.imageButtonPerfil)
 
         // Configuración de acciones para los íconos, por ejemplo:
         arrowIcon.setOnClickListener {
@@ -29,26 +29,24 @@ class MainActivity10 : AppCompatActivity() {
         // Configura los listeners para los clics en los íconos
         imageButtonHome.setOnClickListener {
             // Lógica para ir a la pantalla de Inicio
-            //val intent = Intent(this, HomeActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, MainActivity9::class.java)
+            startActivity(intent)
         }
 
         imageButtonNotifications.setOnClickListener {
-            // Lógica para ir a la pantalla de Notificaciones
-            //val intent = Intent(this, NotificationsActivity::class.java)
+            //val intent = Intent(this, MainActivity10::class.java)
             //startActivity(intent)
         }
 
         imageButtonAgenda.setOnClickListener {
-            // Lógica para ir a la pantalla de Agenda
-            //val intent = Intent(this, AgendaActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, MainActivity17::class.java)
+            startActivity(intent)
         }
 
         imageButtonProfile.setOnClickListener {
             // Lógica para ir a la pantalla de Perfil
-            //val intent = Intent(this, ProfileActivity::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, MainActivity15::class.java)
+            startActivity(intent)
         }
     }
 }

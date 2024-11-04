@@ -1,211 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A0BBD4"
-    android:orientation="vertical"
     android:padding="16dp"
-    tools:ignore="ExtraText">
+    tools:context=".MainActivity">
 
-    <!-- Icono Flecha en Esquina Superior Izquierda -->
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:background="@android:color/transparent"
-            android:contentDescription="Regresar"
-            android:src="@drawable/baseline_arrow_circle_left_24"
-            app:tint="#28336F" />
-    </FrameLayout>
+    <ImageButton
+        android:id="@+id/imageView7"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Regresar"
+        android:src="@drawable/baseline_arrow_circle_left_24"
+        app:tint="#28336F" />
 
-    <!-- Título FISIOPLUS (Centrado) -->
 
-    <!-- Contenedor de "Agenda HOY" -->
+    <ImageView
+        android:id="@+id/userImage"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Imagen de usuario"
+        android:src="@drawable/pacientee" />
+
+
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
-        android:text="FISIOPLUS"
+        android:layout_below="@id/userImage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Antonella Mora Peña"
         android:textColor="#28336F"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textSize="18sp" />
 
-    <!-- Barra Inferior de Iconos y Texto -->
+
     <LinearLayout
+        android:id="@+id/infoButtonsContainer"
         android:layout_width="300dp"
-        android:layout_height="550dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_height="430dp"
+        android:layout_below="@id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:background="#D4E6F1"
-        android:elevation="4dp"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/today_schedule"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Recordatorio"
+
+        <EditText
+            android:id="@+id/email_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Correo"
             android:textColor="#28336F"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColorHint="#28336F" />
+
+
+        <EditText
+            android:id="@+id/birthdate_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Fecha de Nacimiento"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+
+        <EditText
+            android:id="@+id/gender_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Género"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+
+        <EditText
+            android:id="@+id/address_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Dirección"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+
+        <Button
+            android:id="@+id/medicalhistory_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#B9C8DA"
+            android:text="Historial médico"
+            android:textColor="#28336F"
+            android:textSize="16sp" />
     </LinearLayout>
 
-    <!-- Agrega espacio en la parte superior -->
-    <!-- Barra Inferior de Iconos y Texto -->
+
     <LinearLayout
-        android:id="@+id/bottomBar"
+        android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:elevation="8dp"
         android:orientation="horizontal"
         android:padding="8dp">
 
-        <!-- Botón de Inicio -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonInicio"
+                android:id="@+id/buttonHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Inicio"
                 android:src="@drawable/baseline_home_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Inicio"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Agenda -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonAgenda"
+                android:id="@+id/imageButtonCalendario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:contentDescription="Agenda"
-                android:src="@drawable/baseline_library_books_24"
+                android:contentDescription="Calendario"
+                android:src="@drawable/baseline_calendar_month_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Agenda"
+                android:text="Calendario"
                 android:textColor="#28336F"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Botón de Notificaciones -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonNotificaciones"
+                android:id="@+id/buttonNotifications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Notificaciones"
                 android:src="@drawable/baseline_notifications_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Notificaciones"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Perfil -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonPerfil"
+                android:id="@+id/buttonProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Perfil"
                 android:src="@drawable/baseline_person_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Perfil"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
-
     </LinearLayout>
-
-</LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</RelativeLayout>
 
 
 

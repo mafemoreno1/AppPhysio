@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A0BBD4"
-    android:orientation="vertical"
-    android:padding="16dp"
-    tools:ignore="ExtraText">
+    android:padding="16dp">
 
     <!-- Icono Flecha en Esquina Superior Izquierda -->
     <FrameLayout
@@ -16,8 +14,8 @@
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="start"
             android:background="@android:color/transparent"
             android:contentDescription="Regresar"
@@ -25,192 +23,206 @@
             app:tint="#28336F" />
     </FrameLayout>
 
-    <!-- Título FISIOPLUS (Centrado) -->
-
-    <!-- Contenedor de "Agenda HOY" -->
+    <!-- Título Principal -->
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/title_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:fontFamily="serif"
         android:text="FISIOPLUS"
+        android:textAlignment="center"
         android:textColor="#28336F"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
-    <!-- Barra Inferior de Iconos y Texto -->
+    <!-- Sección de Información del Paciente Centraba -->
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="550dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/patient_info_section"
+        android:layout_width="350dp"
+        android:layout_height="520dp"
+        android:layout_centerInParent="true"
         android:background="#D4E6F1"
-        android:elevation="4dp"
+        android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
+        <!-- Título de la Sección -->
         <TextView
-            android:id="@+id/today_schedule"
+            android:id="@+id/section_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Recordatorio"
+            android:layout_gravity="center"
+            android:fontFamily="serif"
+            android:text="Inf Paciente"
             android:textColor="#28336F"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <!-- Campo Nombre -->
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Nombre"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <!-- Campo Edad -->
+        <EditText
+            android:id="@+id/age_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Edad"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <!-- Campo Peso -->
+        <EditText
+            android:id="@+id/weight_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Peso"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <!-- Campo Recomendaciones -->
+        <EditText
+            android:id="@+id/observations_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Observaciones"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <!-- Botón Editar -->
+        <Button
+            android:id="@+id/edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#2FFFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Editar"
+            android:textColor="#4A90E2"
+            android:textSize="16sp" />
     </LinearLayout>
 
-    <!-- Agrega espacio en la parte superior -->
-    <!-- Barra Inferior de Iconos y Texto -->
+    <!-- Barra Inferior de Iconos -->
     <LinearLayout
-        android:id="@+id/bottomBar"
+        android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom|center_horizontal"
-        android:layout_marginBottom="8dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:elevation="8dp"
         android:orientation="horizontal"
         android:padding="8dp">
 
-        <!-- Botón de Inicio -->
+        <!-- Icono Inicio -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonInicio"
+                android:id="@+id/buttonHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Inicio"
                 android:src="@drawable/baseline_home_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Inicio"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Agenda -->
+        <!-- Icono Calendario -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonAgenda"
+                android:id="@+id/imageButtonCalendario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:contentDescription="Agenda"
-                android:src="@drawable/baseline_library_books_24"
+                android:contentDescription="Calendario"
+                android:src="@drawable/baseline_calendar_month_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Agenda"
+                android:text="Calendario"
                 android:textColor="#28336F"
-                android:textSize="10sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Botón de Notificaciones -->
+        <!-- Icono Notificaciones -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonNotificaciones"
+                android:id="@+id/buttonNotifications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Notificaciones"
                 android:src="@drawable/baseline_notifications_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Notificaciones"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Perfil -->
+        <!-- Icono Perfil -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonPerfil"
+                android:id="@+id/buttonProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Perfil"
                 android:src="@drawable/baseline_person_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
                 android:text="Perfil"
                 android:textColor="#28336F"
                 android:textSize="10sp" />
         </LinearLayout>
-
     </LinearLayout>
 
-</LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</RelativeLayout>
 
 
 

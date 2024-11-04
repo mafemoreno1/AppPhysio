@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A0BBD4"
+    android:padding="16dp">
+
+    <!-- Icono Flecha en Esquina Superior Izquierda -->
+    <ImageButton
+        android:id="@+id/imageView7"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Regresar"
+        android:src="@drawable/baseline_arrow_circle_left_24"
+        app:tint="#28336F" />
+
+    <!-- Imagen centrada -->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="69dp"
+        android:layout_height="94dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/lfisio" />
+
+    <!-- Contenedor de información de paciente, ubicado debajo de la imagen -->
+    <LinearLayout
+        android:id="@+id/patient_info_section"
+        android:layout_width="350dp"
+        android:layout_height="520dp"
+        android:layout_centerInParent="true"
+        android:layout_margin="30dp"
+        android:background="#D4E6F1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título Edición Información Paciente -->
+        <TextView
+            android:id="@+id/edit_patient_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Edición Información Paciente"
+            android:textColor="#28336F"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <!-- Campos de entrada -->
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Nombre"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <EditText
+            android:id="@+id/age_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Edad"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <EditText
+            android:id="@+id/weight_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#28336F"
+            android:hint="Peso"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <EditText
+            android:id="@+id/observations_field"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#28336F"
+            android:hint="Observaciones"
+            android:textColor="#28336F"
+            android:textColorHint="#28336F" />
+
+        <!-- Botón Guardar Cambios -->
+        <Button
+            android:id="@+id/save_changes_button"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@null"
+            android:backgroundTint="#22FFFFFF"
+            android:text="Guardar Cambios"
+            android:textColor="#4A90E2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Barra inferior de iconos, fijada en la parte inferior de la pantalla -->
+<LinearLayout
+android:id="@+id/bottomNavBar"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:elevation="8dp"
+android:orientation="horizontal"
+android:padding="8dp">
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/buttonHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Inicio"
+        android:src="@drawable/baseline_home_24"
+        app:tint="#28336F" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/imageButtonCalendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Calendario"
+        android:src="@drawable/baseline_calendar_month_24"
+        app:tint="#28336F" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calendario"
+        android:textColor="#28336F"
+        android:textSize="12sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/buttonNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Notificaciones"
+        android:src="@drawable/baseline_notifications_24"
+        app:tint="#28336F" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notificaciones"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/buttonProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Perfil"
+        android:src="@drawable/baseline_person_24"
+        app:tint="#28336F" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+</LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+

@@ -13,19 +13,18 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="68dp">
+        tools:ignore="MissingConstraints">
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
             android:layout_gravity="start"
             android:background="@android:color/transparent"
             android:contentDescription="Regresar"
             android:src="@drawable/baseline_arrow_circle_left_24"
-            app:tint="#28336F" />
+            app:tint="#28336F"
+            android:layout_marginTop="50dp" />
     </FrameLayout>
 
     <CalendarView
@@ -176,6 +175,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 
 

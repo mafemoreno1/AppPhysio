@@ -1,130 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="#A0BBD4"
-    tools:context=".MainActivity11">
+    android:padding="16dp"
+    android:gravity="center_horizontal">
 
 
+    <!-- Icono Flecha en Esquina Superior Izquierda -->
     <FrameLayout
-        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content">
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="46dp"
-            android:layout_height="34dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="start"
             android:background="@android:color/transparent"
-            android:contentDescription="Regresar"
             android:src="@drawable/baseline_arrow_circle_left_24"
-            app:tint="#28336F" />
+            app:tint="#28336F"
+            android:contentDescription="Regresar" />
     </FrameLayout>
 
-    <Button
-        android:id="@+id/sofiaButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="52dp"
-        android:backgroundTint="#28336F"
-        android:text="Sofia Martinez"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/felipeButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!-- Ícono superior centrado como ImageView -->
+    <ImageView
+        android:id="@+id/imageButtonTop"
+        android:layout_width="97dp"
+        android:layout_height="98dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        app:srcCompat="@drawable/lfisio" />
 
 
-    <Button
-        android:id="@+id/alexaButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="156dp"
-        android:backgroundTint="#28336F"
-        android:text="Alexa Moreno"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/felipeButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="60dp"
-        android:backgroundTint="#28336F"
-        android:text="Felipe Ortega"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/alexaButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+    <!-- Contenedor de "Notificaciones" centrado en el diseño -->
     <LinearLayout
-        android:id="@+id/bottomBar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:background="#D4E6F1"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <!-- Botón de Inicio -->
+        <TextView
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Notificaciones"
+            android:textColor="#28336F"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Barra de iconos en la parte inferior con nombres debajo de cada ícono -->
+    <LinearLayout
+        android:id="@+id/bottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonInicio"
+                android:id="@+id/buttonHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Inicio"
                 android:src="@drawable/baseline_home_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Inicio"
                 android:textColor="#28336F"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Calendario -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
                 android:id="@+id/imageButtonCalendario"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Calendario"
                 android:src="@drawable/baseline_calendar_month_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -133,70 +111,54 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <!-- Botón de Notificaciones -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonNotificaciones"
+                android:id="@+id/buttonNotifications"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Notificaciones"
                 android:src="@drawable/baseline_notifications_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Notificaciones"
                 android:textColor="#28336F"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
 
-        <!-- Botón de Perfil -->
+
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical">
-
             <ImageButton
-                android:id="@+id/imageButtonPerfil"
+                android:id="@+id/buttonProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Perfil"
                 android:src="@drawable/baseline_person_24"
                 app:tint="#28336F" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Perfil"
                 android:textColor="#28336F"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selección Profesional"
-        android:textColor="#28336F"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="186dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
+</LinearLayout>
 
 
 

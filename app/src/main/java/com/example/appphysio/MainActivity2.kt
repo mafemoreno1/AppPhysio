@@ -6,13 +6,20 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.content.Intent
-
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity2 : AppCompatActivity() {
+
+    // Referencia a la base de datos de Firebase
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+
+        // Inicializa la referencia a la base de datos de Firebase en el nodo "users"
+        database = FirebaseDatabase.getInstance().getReference("users")
 
         // Referencias a los campos de texto y botones
         val emailEditText = findViewById<EditText>(R.id.emailEditText)
@@ -25,22 +32,24 @@ class MainActivity2 : AppCompatActivity() {
             val email = emailEditText.text.toString()
             val password = passwordEditText.text.toString()
 
-            // Validar que los campos no estén vacíos
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete los campos", Toast.LENGTH_SHORT).show()
             } else {
-                // Aquí se puede manejar la lógica de inicio de sesión
-                //Toast.makeText(this, "Ingresando...", Toast.LENGTH_SHORT).show()
-                val intent = Intent (this, MainActivity6::class.java)
+                Toast.makeText(this, "Ingresando...", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity6::class.java)
                 startActivity(intent)
             }
         }
 
+        // Acción para el botón de Registrar
         registerButton.setOnClickListener {
-            //Toast.makeText(this, "Redirigiendo a registro...", Toast.LENGTH_SHORT).show()
-            val intent = Intent (this, MainActivity4::class.java)
+            val intent = Intent(this, MainActivity4::class.java)
             startActivity(intent)
         }
+
+
     }
 }
+
+
 

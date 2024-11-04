@@ -1,5 +1,6 @@
 package com.example.appphysio
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -50,16 +51,24 @@ class MainActivity8 : AppCompatActivity() {
 
         // Navegación en la barra inferior
         findViewById<ImageButton>(R.id.imageButtonInicio).setOnClickListener {
-            Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity6::class.java)
+            startActivity(intent)
         }
         findViewById<ImageButton>(R.id.imageButtonCalendario).setOnClickListener {
-            Toast.makeText(this, "Calendario", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Calendario", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity7::class.java)
+            startActivity(intent)
         }
         findViewById<ImageButton>(R.id.imageButtonNotificaciones).setOnClickListener {
-            Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity16::class.java)
+            startActivity(intent)
         }
         findViewById<ImageButton>(R.id.imageButtonPerfil).setOnClickListener {
-            Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, MainActivity14::class.java)
+            startActivity(intent)
         }
     }
 }

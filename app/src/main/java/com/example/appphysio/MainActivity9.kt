@@ -38,15 +38,18 @@ class MainActivity9 : AppCompatActivity() {
         }
 
         agendaIcon.setOnClickListener {
-            // Acción para el icono de Agenda
+            val intent = Intent(this, MainActivity16::class.java)
+            startActivity(intent)
         }
 
         profileIcon.setOnClickListener {
-            // Acción para el icono de Perfil
+            val intent = Intent(this, MainActivity15::class.java)
+            startActivity(intent)
+
         }
 
         // Puedes configurar otros comportamientos o actualizar los textos si es necesario
         titleTextView.text = "FISIOPLUS"
-        todayScheduleTextView.text = "Agenda HOY"
+        todayScheduleTextView.text = "Recordatorio"
     }
 }

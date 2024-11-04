@@ -1,5 +1,6 @@
 package com.example.appphysio
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -10,14 +11,15 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity11 : AppCompatActivity() {
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main11)
 
         // Botones para seleccionar perfiles
-        val buttonAlexa = findViewById<Button>(R.id.button6)
-        val buttonFelipe = findViewById<Button>(R.id.button4)
-        val buttonSofia = findViewById<Button>(R.id.button5)
+        val buttonAlexa = findViewById<Button>(R.id.alexaButton)
+        val buttonFelipe = findViewById<Button>(R.id.felipeButton)
+        val buttonSofia = findViewById<Button>(R.id.sofiaButton)
 
         // Botones del menú inferior
         val arrowIcon = findViewById<ImageView>(R.id.imageView7)
@@ -55,8 +57,8 @@ class MainActivity11 : AppCompatActivity() {
         }
 
         buttonInicio.setOnClickListener {
-            // Navegar a la pantalla de inicio
-            //startActivity(Intent(this, InicioActivity::class.java))
+            val intent = Intent(this, MainActivity6::class.java)
+            startActivity(intent)
         }
 
         buttonCalendario.setOnClickListener {
@@ -64,13 +66,13 @@ class MainActivity11 : AppCompatActivity() {
         }
 
         buttonNotificaciones.setOnClickListener {
-            // Navegar a la pantalla de notificaciones
-           // startActivity(Intent(this, NotificacionesActivity::class.java))
+            val intent = Intent(this, MainActivity16::class.java)
+            startActivity(intent)
         }
 
         buttonPerfil.setOnClickListener {
-            // Navegar a la pantalla de perfil
-            //startActivity(Intent(this, PerfilActivity::class.java))
+            val intent = Intent(this, MainActivity14::class.java)
+            startActivity(intent)
         }
     }
 }
