@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.CalendarView
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -23,12 +24,18 @@ class MainActivity7 : AppCompatActivity() {
         setContentView(R.layout.activity_main7)
 
         // Inicializa los elementos de la interfaz
+        val arrowIcon = findViewById<ImageView>(R.id.imageView7)
         calendarView = findViewById(R.id.calendarView)
         buttonSeleccionarHora = findViewById(R.id.button)
         imageButtonInicio = findViewById(R.id.imageButtonInicio)
         imageButtonCalendario = findViewById(R.id.imageButtonCalendario)
         imageButtonNotificaciones = findViewById(R.id.imageButtonNotificaciones)
         imageButtonPerfil = findViewById(R.id.imageButtonPerfil)
+
+        arrowIcon.setOnClickListener {
+            // Acción para el icono de flecha, como regresar a la actividad anterior
+            finish()
+        }
 
         // Configura el listener para el botón de seleccionar hora
         buttonSeleccionarHora.setOnClickListener {

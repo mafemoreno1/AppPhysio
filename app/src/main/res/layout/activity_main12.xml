@@ -40,7 +40,7 @@
     <!-- Sección de Información del Paciente Centraba -->
     <LinearLayout
         android:id="@+id/patient_info_section"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="520dp"
         android:layout_centerInParent="true"
         android:background="#D4E6F1"

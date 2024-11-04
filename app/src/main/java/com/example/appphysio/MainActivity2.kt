@@ -35,9 +35,10 @@ class MainActivity2 : AppCompatActivity() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Por favor, complete los campos", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Ingresando...", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "Ingresando...", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, MainActivity6::class.java)
                 startActivity(intent)
+
             }
         }
 

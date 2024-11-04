@@ -16,10 +16,10 @@
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="wrap_content"
+            android:layout_width="wrap_content" android:background="@android:color/transparent"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
-            android:background="@android:color/transparent"
+
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:tint="#28336F"
             android:contentDescription="Regresar" />
@@ -36,9 +36,11 @@
 
 
     <!-- Contenedor de "Notificaciones" centrado en el diseño -->
+
+    <!-- Barra de iconos en la parte inferior con nombres debajo de cada ícono -->
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="500dp"
+        android:layout_height="520dp"
         android:layout_gravity="center"
         android:background="#D4E6F1"
         android:orientation="vertical"
@@ -55,7 +57,6 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Barra de iconos en la parte inferior con nombres debajo de cada ícono -->
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"

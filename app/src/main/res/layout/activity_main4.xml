@@ -8,6 +8,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity4">
 
+    <!-- Icono Flecha en Esquina Superior Izquierda -->
+    <FrameLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/imageView7"
+            android:layout_width="39dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/transparent"
+            android:contentDescription="Regresar"
+            android:src="@drawable/baseline_arrow_circle_left_24"
+            app:tint="#28336F" />
+    </FrameLayout>
+
 
     <Button
         android:id="@+id/pacienteButton"

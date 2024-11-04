@@ -1,68 +1,71 @@
 package com.example.appphysio
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity15 : AppCompatActivity() {
 
-    private lateinit var emailfield: EditText
-    private lateinit var birthdatefield: EditText
-    private lateinit var genderfield: EditText
-    private lateinit var specialityfield: EditText
-    private lateinit var addressfield: EditText
-    private lateinit var buttonHistory: Button
-    private lateinit var buttonHome: ImageButton
-    private lateinit var buttonAgenda: ImageButton
-    private lateinit var buttonNotifications: ImageButton
-    private lateinit var buttonProfile: ImageButton
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main15)
 
-        // Inicializar los elementos de la interfaz
-        emailfield = findViewById(R.id.email_field)
-        birthdatefield= findViewById(R.id.birthdate_field)
-        genderfield = findViewById(R.id.gender_field)
-        specialityfield = findViewById(R.id.speciality_field)
-        addressfield = findViewById(R.id.address_field)
-        buttonHistory = findViewById(R.id.button7)
-        buttonHome = findViewById(R.id.buttonHome)
-        buttonAgenda = findViewById(R.id.imageButtonAgenda)
-        buttonNotifications = findViewById(R.id.buttonNotifications)
-        buttonProfile = findViewById(R.id.buttonProfile)
+        // Configura los botones de navegación
+        val buttonHome = findViewById<ImageButton>(R.id.buttonHome)
+        val buttonAgenda = findViewById<ImageButton>(R.id.imageButtonAgenda)
+        val buttonNotifications = findViewById<ImageButton>(R.id.buttonNotifications)
+        val buttonProfile = findViewById<ImageButton>(R.id.buttonProfile)
 
-        // Acciones para los botones de navegación inferior
+        // Configura el botón de historial
+        val buttonHistorial = findViewById<Button>(R.id.button7)
+
+        // Configura el botón de regresar (flecha)
+        val backButton = findViewById<ImageButton>(R.id.imageView7)
+
+        // Define la acción para el botón de regresar
+        backButton.setOnClickListener {
+            finish() // Regresa a la actividad anterior
+        }
+
+        // Define la acción para el botón de historial
+        buttonHistorial.setOnClickListener {
+            Toast.makeText(this, "Historial del paciente", Toast.LENGTH_SHORT).show()
+            val intent = Intent (this, MainActivity12::class.java)
+            startActivity(intent)
+        }
+
+        // Acción para cada botón de la barra de navegación inferior
         buttonHome.setOnClickListener {
             //Toast.makeText(this, "Inicio", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity9::class.java)
+            val intent = Intent (this, MainActivity9::class.java)
             startActivity(intent)
         }
 
         buttonAgenda.setOnClickListener {
             //Toast.makeText(this, "Agenda", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity17::class.java)
+            val intent = Intent (this, MainActivity17::class.java)
             startActivity(intent)
         }
 
         buttonNotifications.setOnClickListener {
             //Toast.makeText(this, "Notificaciones", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainActivity10::class.java)
+            val intent = Intent (this, MainActivity10::class.java)
             startActivity(intent)
         }
 
-        // Acción para el botón "Historial Paciente"
-        buttonHistory.setOnClickListener {
-            // Cambia a la actividad del historial del paciente
-            val intent = Intent(this, MainActivity12::class.java)
-            startActivity(intent)
+        buttonProfile.setOnClickListener {
+            //Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show()
+            //val intent = Intent (this, MainActivity15::class.java)
+            //startActivity(intent)
         }
     }
 }
+
+
+
+
+

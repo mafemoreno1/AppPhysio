@@ -38,7 +38,7 @@ class MainActivity9 : AppCompatActivity() {
         }
 
         agendaIcon.setOnClickListener {
-            val intent = Intent(this, MainActivity16::class.java)
+            val intent = Intent(this, MainActivity17::class.java)
             startActivity(intent)
         }
 

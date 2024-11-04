@@ -45,7 +45,7 @@
 
     <LinearLayout
         android:id="@+id/infoButtonsContainer"
-        android:layout_width="300dp"
+        android:layout_width="290dp"
         android:layout_height="430dp"
         android:layout_below="@id/userName"
         android:layout_centerHorizontal="true"

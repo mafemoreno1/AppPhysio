@@ -4,27 +4,34 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity3 : AppCompatActivity() {
 
-    private lateinit var database: DatabaseReference
+    private lateinit var auth: FirebaseAuth
+    private val database = FirebaseDatabase.getInstance().reference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main3)
 
-        // Inicializa la referencia a la base de datos
-        database = FirebaseDatabase.getInstance().getReference("usuarios")
+        auth = FirebaseAuth.getInstance()
 
+        val arrowIcon = findViewById<ImageView>(R.id.imageView7)
         val nameEditText = findViewById<EditText>(R.id.editTextNombre)
         val emailEditText = findViewById<EditText>(R.id.editTextEmail)
         val passwordEditText = findViewById<EditText>(R.id.editTextPassword)
         val confirmPasswordEditText = findViewById<EditText>(R.id.editTextConfirmPassword)
         val registerButton = findViewById<Button>(R.id.buttonRegister)
+
+        arrowIcon.setOnClickListener {
+            // Acción para el icono de flecha, como regresar a la actividad anterior
+            finish()
+        }
 
         registerButton.setOnClickListener {
             val name = nameEditText.text.toString()
@@ -37,30 +44,42 @@ class MainActivity3 : AppCompatActivity() {
             } else if (password != confirmPassword) {
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
             } else {
-                // Crea un nuevo usuario
-                val userId = database.push().key // Genera un ID único para el usuario
-                val user = user(userId, name, email, password) // Crea un objeto User
-
-                // Almacena el usuario en Firebase
-                userId?.let {
-                    database.child(it).setValue(user).addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this, MainActivity6::class.java)
-                            startActivity(intent)
-                            finish()
-                        } else {
-                            Toast.makeText(this, "Error al registrar usuario", Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
+                registerUser(name, email, password)
             }
         }
     }
+
+    private fun registerUser(name: String, email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    // Obtener el ID del usuario registrado
+                    val userId = auth.currentUser?.uid
+
+                    // Crear un mapa de datos del usuario incluyendo nombre, correo y contraseña
+                    val userMap = mapOf(
+                        "name" to name,
+                        "email" to email,
+                        "password" to password
+                    )
+
+                    // Almacenar los datos en Realtime Database
+                    if (userId != null) {
+                        database.child("users").child(userId).setValue(userMap)
+                            .addOnCompleteListener { dbTask ->
+                                if (dbTask.isSuccessful) {
+                                    Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show()
+                                    val intent = Intent(this, MainActivity6::class.java)
+                                    startActivity(intent)
+                                } else {
+                                    Toast.makeText(this, "Error al guardar los datos", Toast.LENGTH_SHORT).show()
+                                }
+                            }
+                    }
+                } else {
+                    Toast.makeText(this, "Error en el registro: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+    }
 }
-
-// Clase de modelo para el usuario
-data class user(val userId: String?, val name: String, val email: String, val password: String)
-
-
 

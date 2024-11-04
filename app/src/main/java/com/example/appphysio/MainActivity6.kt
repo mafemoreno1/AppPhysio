@@ -68,21 +68,11 @@ class MainActivity6 : AppCompatActivity() {
 
         // Configuración de los TextViews con datos de citas
         val subtitulo:TextView=findViewById(R.id.textViewSubtitulo)
-        val citaActualTextView: TextView = findViewById(R.id.textViewCita1)
-        val fechaCitaActual: TextView = findViewById(R.id.textViewFecha1)
-        val nuevaCitaTextView: TextView = findViewById(R.id.textViewCita2)
-        val fechaNuevaCita: TextView = findViewById(R.id.textViewFecha2)
-        val citaReprogramadaTextView: TextView = findViewById(R.id.textViewCita3)
-        val fechaCitaReprogramada: TextView = findViewById(R.id.textViewFecha3)
+
 
         // Configura los textos de las citas como sea necesario
         subtitulo.text = "Recordatorio"
-        citaActualTextView.text = "Cita Fisioterapia"
-        fechaCitaActual.text = "25/10/2024 - 10:00 AM"
-        nuevaCitaTextView.text = "Nueva Cita Fisioterapia"
-        fechaNuevaCita.text = "11/07/2024 - 2:00 PM"
-        citaReprogramadaTextView.text = "Cita Reprogramada"
-        fechaCitaReprogramada.text = "08/05/2024 - 5:00 PM"
+
     }
 }
 

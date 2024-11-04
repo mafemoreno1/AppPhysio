@@ -2,46 +2,53 @@ package com.example.appphysio
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity17 : AppCompatActivity() {
-
-    private lateinit var imageButtonInicio: ImageButton
-    private lateinit var imageButtonAgenda: ImageButton
-    private lateinit var imageButtonNotificaciones: ImageButton
-    private lateinit var imageButtonPerfil: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main17)
 
-        // Inicializa los botones de la barra de navegación
-        imageButtonInicio = findViewById(R.id.imageButtonInicio)
-        imageButtonAgenda = findViewById(R.id.imageButtonAgenda)
-        imageButtonNotificaciones = findViewById(R.id.imageButtonNotificaciones)
-        imageButtonPerfil = findViewById(R.id.imageButtonPerfil)
+        // Botón de retroceso
+        val backArrow = findViewById<ImageButton>(R.id.backArrow)
+        backArrow.setOnClickListener {
+            // Regresar a la actividad anterior
+            onBackPressed()
+        }
 
-        // Configura los listeners de los botones
-        imageButtonInicio.setOnClickListener {
-            val intent = Intent(this, MainActivity9::class.java)
+        // Manejo de los botones de la barra de navegación inferior
+        val buttonInicio = findViewById<ImageButton>(R.id.imageButtonInicio)
+        val buttonAgenda = findViewById<ImageButton>(R.id.imageButtonAgenda)
+        val buttonNotificaciones = findViewById<ImageButton>(R.id.imageButtonNotificaciones)
+        val buttonPerfil = findViewById<ImageButton>(R.id.imageButtonPerfil)
+
+        buttonInicio.setOnClickListener {
+            //Toast.makeText(this, "Inicio seleccionado", Toast.LENGTH_SHORT).show()
+            val intent = Intent (this, MainActivity9::class.java)
             startActivity(intent)
         }
 
-        imageButtonAgenda.setOnClickListener {
-            // Acción para el botón de Agenda
-
+        buttonAgenda.setOnClickListener {
+            //Toast.makeText(this, "Agenda seleccionada", Toast.LENGTH_SHORT).show()
         }
 
-        imageButtonNotificaciones.setOnClickListener {
-            val intent = Intent(this, MainActivity10::class.java)
+        buttonNotificaciones.setOnClickListener {
+            //Toast.makeText(this, "Notificaciones seleccionadas", Toast.LENGTH_SHORT).show()
+            val intent = Intent (this, MainActivity10::class.java)
             startActivity(intent)
         }
 
-        imageButtonPerfil.setOnClickListener {
-            val intent = Intent(this, MainActivity15::class.java)
+        buttonPerfil.setOnClickListener {
+            //Toast.makeText(this, "Perfil seleccionado", Toast.LENGTH_SHORT).show()
+            val intent = Intent (this, MainActivity15::class.java)
             startActivity(intent)
         }
     }
 }
+
+
 

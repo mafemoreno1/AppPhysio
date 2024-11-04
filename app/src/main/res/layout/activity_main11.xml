@@ -8,76 +8,82 @@
     android:background="#A0BBD4"
     tools:context=".MainActivity11">
 
-
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/imageView7"
             android:layout_width="46dp"
             android:layout_height="34dp"
-            android:layout_gravity="start"
             android:background="@android:color/transparent"
             android:contentDescription="Regresar"
             android:src="@drawable/baseline_arrow_circle_left_24"
             app:tint="#28336F" />
     </FrameLayout>
 
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selección Profesional"
+        android:textColor="#28336F"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/sofiaButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
     <Button
         android:id="@+id/sofiaButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#28336F"
         android:text="Sofia Martinez"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/felipeButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <Button
-        android:id="@+id/alexaButton"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="156dp"
-        android:backgroundTint="#28336F"
-        android:text="Alexa Moreno"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo" />
 
     <Button
         android:id="@+id/felipeButton"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="69dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginBottom="60dp"
         android:backgroundTint="#28336F"
         android:text="Felipe Ortega"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/alexaButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sofiaButton"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/alexaButton"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#28336F"
+        android:text="Alexa Moreno"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/bottomBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/felipeButton" />
 
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,7 +125,7 @@
             <ImageButton
                 android:id="@+id/imageButtonCalendario"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Calendario"
                 android:src="@drawable/baseline_calendar_month_24"
@@ -184,23 +190,4 @@
         </LinearLayout>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textViewTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Selección Profesional"
-        android:textColor="#28336F"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="186dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-

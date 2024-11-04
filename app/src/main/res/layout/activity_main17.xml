@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#A0BBD4">
 
-    <!-- Contenedor principal para el contenido desplazable -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Flecha de regresar y título de la pantalla -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,11 +27,12 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <ImageView
+                <ImageButton
                     android:id="@+id/backArrow"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
                     android:src="@drawable/baseline_arrow_circle_left_24"
                     app:tint="#28336F"
                     android:contentDescription="Regresar"/>
@@ -65,8 +66,6 @@
 
             </LinearLayout>
 
-            <!-- Repite el mismo patrón para cada día de la semana -->
-            <!-- Martes -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,7 +84,7 @@
 
             </LinearLayout>
 
-            <!-- Repetir para Miércoles, Jueves y Viernes -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -139,7 +138,7 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
-            <!-- Añade más LinearLayouts para el miércoles, jueves y viernes siguiendo el mismo formato -->
+
         </LinearLayout>
     </ScrollView>
 
