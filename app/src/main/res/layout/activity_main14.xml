@@ -8,7 +8,6 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-
     <ImageButton
         android:id="@+id/imageView7"
         android:layout_width="48dp"
@@ -20,98 +19,70 @@
         android:src="@drawable/baseline_arrow_circle_left_24"
         app:tint="#28336F" />
 
-
-    <ImageView
-        android:id="@+id/userImage"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Imagen de usuario"
-        android:src="@drawable/pacientee" />
-
-
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/userImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Antonella Mora Peña"
-        android:textColor="#28336F"
-        android:textSize="18sp" />
-
-
+    <!-- LinearLayout centrado -->
     <LinearLayout
         android:id="@+id/infoButtonsContainer"
         android:layout_width="290dp"
         android:layout_height="430dp"
-        android:layout_below="@id/userName"
-        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
         android:background="#D4E6F1"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:backgroundTint="#28336F"
+        android:hint="Correo"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F"
+        android:inputType="textEmailAddress" />
 
-        <EditText
-            android:id="@+id/email_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Correo"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
+    <EditText
+        android:id="@+id/birthdate_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:backgroundTint="#28336F"
+        android:hint="Fecha de Nacimiento"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F"
+        android:inputType="date" />
 
+    <EditText
+        android:id="@+id/gender_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:backgroundTint="#28336F"
+        android:hint="Género"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F"
+        android:inputType="text" />
 
-        <EditText
-            android:id="@+id/birthdate_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Fecha de Nacimiento"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
+    <EditText
+        android:id="@+id/address_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:backgroundTint="#28336F"
+        android:hint="Dirección"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F"
+        android:inputType="text" />
 
+    <Button
+        android:id="@+id/medicalhistory_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#B9C8DA"
+        android:text="Historial médico"
+        android:textColor="#28336F"
+        android:textSize="16sp" />
+</LinearLayout>
 
-        <EditText
-            android:id="@+id/gender_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Género"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
-
-
-        <EditText
-            android:id="@+id/address_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Dirección"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
-
-
-        <Button
-            android:id="@+id/medicalhistory_button"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#B9C8DA"
-            android:text="Historial médico"
-            android:textColor="#28336F"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-
+    <!-- Barra de navegación inferior -->
     <LinearLayout
         android:id="@+id/bottomNavBar"
         android:layout_width="match_parent"
@@ -121,103 +92,96 @@
         android:orientation="horizontal"
         android:padding="8dp">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Inicio"
+        android:src="@drawable/baseline_home_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Inicio"
-                android:src="@drawable/baseline_home_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inicio"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/imageButtonCalendario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Calendario"
+        android:src="@drawable/baseline_calendar_month_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calendario"
+        android:textColor="#28336F"
+        android:textSize="12sp" />
+</LinearLayout>
 
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Notificaciones"
+        android:src="@drawable/baseline_notifications_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notificaciones"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/imageButtonCalendario"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Calendario"
-                android:src="@drawable/baseline_calendar_month_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Calendario"
-                android:textColor="#28336F"
-                android:textSize="12sp" />
-        </LinearLayout>
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Perfil"
+        android:src="@drawable/baseline_person_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+</LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonNotifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Notificaciones"
-                android:src="@drawable/baseline_notifications_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notificaciones"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Perfil"
-                android:src="@drawable/baseline_person_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Perfil"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
-    </LinearLayout>
-</RelativeLayout>
-
-
-
-
+    </RelativeLayout>
 
 
 

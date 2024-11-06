@@ -1,23 +1,22 @@
 package com.example.appphysio
 
-
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity14 : AppCompatActivity() {
+
+
 
     private lateinit var emailField: EditText
     private lateinit var birthDateField: EditText
     private lateinit var genderField: EditText
     private lateinit var addressField: EditText
-    private lateinit var medicalHistoryButton: Button
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,44 +27,55 @@ class MainActivity14 : AppCompatActivity() {
         birthDateField = findViewById(R.id.birthdate_field)
         genderField = findViewById(R.id.gender_field)
         addressField = findViewById(R.id.address_field)
-        medicalHistoryButton = findViewById(R.id.medicalhistory_button)
 
-        // Configurar botón de regresar
-        val backButton: ImageButton = findViewById(R.id.imageView7)
-        backButton.setOnClickListener {
-            finish() // Regresar a la actividad anterior
-        }
+        // Recibir los datos del perfil
+        val nombre = intent.getStringExtra("nombre")
+        val email = intent.getStringExtra("email")
+        val birthDate = intent.getStringExtra("birthDate")
+        val gender = intent.getStringExtra("gender")
+        val address = intent.getStringExtra("address")
 
-        // Configurar el botón de Historial médico
-        medicalHistoryButton.setOnClickListener {
-            // Aquí puedes agregar la lógica para abrir la actividad de historial médico
-            val intent = Intent(this, MainActivity12::class.java)
-            startActivity(intent)
-        }
 
-        // Configurar barra de navegación inferior
-        setupBottomNavBar()
+        // Mostrar los datos en los campos de texto
+        emailField.setText(email)
+        birthDateField.setText(birthDate)
+        genderField.setText(gender)
+        addressField.setText(address)
+
+        // Configuración de los botones de la barra de navegación
+        setupNavigationBar()
     }
 
-    private fun setupBottomNavBar() {
+    private fun setupNavigationBar() {
+        // Flecha de regreso
+        findViewById<ImageButton>(R.id.imageView7).setOnClickListener {
+            onBackPressed()  // Navega a la actividad anterior
+        }
+
+        // Barra de navegación
         findViewById<ImageButton>(R.id.buttonHome).setOnClickListener {
+            // Acción para "Inicio"
             val intent = Intent(this, MainActivity6::class.java)
             startActivity(intent)
         }
 
         findViewById<ImageButton>(R.id.imageButtonCalendario).setOnClickListener {
+            // Acción para "Calendario"
             val intent = Intent(this, MainActivity7::class.java)
             startActivity(intent)
         }
 
         findViewById<ImageButton>(R.id.buttonNotifications).setOnClickListener {
+            // Acción para "Notificaciones"
             val intent = Intent(this, MainActivity16::class.java)
             startActivity(intent)
         }
 
         findViewById<ImageButton>(R.id.buttonProfile).setOnClickListener {
-            //val intent = Intent(this, MainActivity14::class.java)
-            //startActivity(intent)
+            // Acción para "Perfil"
         }
     }
 }
+
+
+

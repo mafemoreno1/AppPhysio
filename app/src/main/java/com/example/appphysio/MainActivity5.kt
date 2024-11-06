@@ -15,7 +15,7 @@ class MainActivity5 : AppCompatActivity() {
     // Variables de Firebase
     private lateinit var auth: FirebaseAuth
     private val database = FirebaseDatabase.getInstance()
-    private val usersRef = database.getReference("users")
+    private val usersRef = database.getReference("users fisioterapeutas")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +34,7 @@ class MainActivity5 : AppCompatActivity() {
         val registerButton = findViewById<Button>(R.id.buttonRegister)
 
         arrowIcon.setOnClickListener {
-            // Acción para el icono de flecha, como regresar a la actividad anterior
-            finish()
+            finish() // Regresar a la actividad anterior
         }
 
         // Acciones al presionar el botón de registro
@@ -55,16 +54,17 @@ class MainActivity5 : AppCompatActivity() {
                 auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // Obtener el ID del usuario registrado
                             val userId = auth.currentUser?.uid
                             if (userId != null) {
-                                // Guardar los datos en Firebase Realtime Database
+                                // Crear un mapa de datos del usuario sin la contraseña
                                 val userMap = mapOf(
                                     "name" to name,
                                     "location" to location,
                                     "email" to email,
-                                    "password" to password
+                                    "password" to password,
+                                    "perfil" to "fisioterapeuta"
                                 )
+                                // Guardar los datos en Firebase Realtime Database
                                 usersRef.child(userId).setValue(userMap)
                                     .addOnSuccessListener {
                                         Toast.makeText(this, "Usuario registrado", Toast.LENGTH_SHORT).show()
@@ -85,6 +85,7 @@ class MainActivity5 : AppCompatActivity() {
         }
     }
 }
+
 
 
 

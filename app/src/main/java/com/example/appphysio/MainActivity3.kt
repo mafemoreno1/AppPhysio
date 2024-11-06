@@ -29,8 +29,7 @@ class MainActivity3 : AppCompatActivity() {
         val registerButton = findViewById<Button>(R.id.buttonRegister)
 
         arrowIcon.setOnClickListener {
-            // Acción para el icono de flecha, como regresar a la actividad anterior
-            finish()
+            finish() // Regresar a la actividad anterior
         }
 
         registerButton.setOnClickListener {
@@ -53,24 +52,25 @@ class MainActivity3 : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    // Obtener el ID del usuario registrado
                     val userId = auth.currentUser?.uid
 
-                    // Crear un mapa de datos del usuario incluyendo nombre, correo y contraseña
+                    // Crear un mapa de datos del usuario sin la contraseña
                     val userMap = mapOf(
                         "name" to name,
                         "email" to email,
-                        "password" to password
+                        "password" to password,
+                        "pefil" to "paciente" // Puedes agregar el rol si es necesario
                     )
 
                     // Almacenar los datos en Realtime Database
                     if (userId != null) {
-                        database.child("users").child(userId).setValue(userMap)
+                        database.child("users pacientes").child(userId).setValue(userMap)
                             .addOnCompleteListener { dbTask ->
                                 if (dbTask.isSuccessful) {
                                     Toast.makeText(this, "Registro completado", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(this, MainActivity6::class.java)
                                     startActivity(intent)
+                                    finish() // Finaliza la actividad para evitar que vuelva al registro
                                 } else {
                                     Toast.makeText(this, "Error al guardar los datos", Toast.LENGTH_SHORT).show()
                                 }
@@ -82,4 +82,3 @@ class MainActivity3 : AppCompatActivity() {
             }
     }
 }
-

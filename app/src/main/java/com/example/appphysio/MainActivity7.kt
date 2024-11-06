@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.CalendarView
+import android.widget.ImageButton
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class MainActivity7 : AppCompatActivity() {
 
@@ -18,6 +20,9 @@ class MainActivity7 : AppCompatActivity() {
     private lateinit var imageButtonCalendario: ImageButton
     private lateinit var imageButtonNotificaciones: ImageButton
     private lateinit var imageButtonPerfil: ImageButton
+
+    // Variable para almacenar la fecha seleccionada en formato de texto
+    private var selectedDate: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +37,25 @@ class MainActivity7 : AppCompatActivity() {
         imageButtonNotificaciones = findViewById(R.id.imageButtonNotificaciones)
         imageButtonPerfil = findViewById(R.id.imageButtonPerfil)
 
+        // Acción para el icono de flecha, como regresar a la actividad anterior
         arrowIcon.setOnClickListener {
-            // Acción para el icono de flecha, como regresar a la actividad anterior
             finish()
         }
 
-        // Configura el listener para el botón de seleccionar hora
+        // Listener para capturar la fecha seleccionada en el CalendarView
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            val calendar = Calendar.getInstance()
+            calendar.set(year, month, dayOfMonth)
+
+            // Formatea la fecha seleccionada como "dd/MM/yyyy"
+            val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+            selectedDate = dateFormat.format(calendar.time) // Guarda la fecha seleccionada
+        }
+
+        // Listener para el botón de seleccionar hora, pasa la fecha a MainActivity8
         buttonSeleccionarHora.setOnClickListener {
             val intent = Intent(this, MainActivity8::class.java)
+            intent.putExtra("selectedDate", selectedDate)
             startActivity(intent)
         }
 
@@ -50,7 +66,7 @@ class MainActivity7 : AppCompatActivity() {
         }
 
         imageButtonCalendario.setOnClickListener {
-
+            // Aquí podrías agregar acciones para el botón de Calendario, si es necesario
         }
 
         imageButtonNotificaciones.setOnClickListener {

@@ -9,20 +9,18 @@
     tools:context=".MainActivity8">
 
     <!-- Icono Flecha en Esquina Superior Izquierda -->
-
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
             android:id="@+id/imageView7"
-            android:layout_width="40dp"
-            android:layout_height="match_parent"
+            android:layout_width="48dp"
+            android:layout_height="50dp"
             android:layout_gravity="start"
             android:background="@android:color/transparent"
             android:contentDescription="Regresar"
@@ -30,56 +28,44 @@
             app:tint="#28336F" />
     </FrameLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="142dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#22FFFFFF"
-        android:text="Confirmar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="135dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="36dp"
-        android:backgroundTint="#22FFFFFF"
-        android:text="Cancelar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/timePicker"
-        tools:ignore="MissingConstraints" />
-
+    <!-- Texto del título -->
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="66dp"
+        android:layout_marginTop="80dp"
         android:text="Selección Hora"
         android:textColor="#28336F"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
+    <!-- TimePicker para seleccionar la hora -->
     <TimePicker
         android:id="@+id/timePicker"
-        android:layout_width="301dp"
-        android:layout_height="314dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
         android:background="#5E28336F"
         android:timePickerMode="spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
+    <!-- Botón Confirmar -->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#22FFFFFF"
+        android:text="Confirmar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker" />
+
+    <!-- Barra de Navegación Inferior -->
     <LinearLayout
         android:id="@+id/bottomBar"
         android:layout_width="0dp"
@@ -126,7 +112,7 @@
             <ImageButton
                 android:id="@+id/imageButtonCalendario"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:background="@null"
                 android:contentDescription="Calendario"
                 android:src="@drawable/baseline_calendar_month_24"
@@ -192,3 +178,5 @@
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

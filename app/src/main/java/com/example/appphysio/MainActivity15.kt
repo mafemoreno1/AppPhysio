@@ -14,6 +14,12 @@ class MainActivity15 : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main15)
 
+        val nombre = intent.getStringExtra("nombre")
+        val email = intent.getStringExtra("email")
+        val birthDate = intent.getStringExtra("birthDate")
+        val gender = intent.getStringExtra("gender")
+        val address = intent.getStringExtra("address")
+
         // Configura los botones de navegación
         val buttonHome = findViewById<ImageButton>(R.id.buttonHome)
         val buttonAgenda = findViewById<ImageButton>(R.id.imageButtonAgenda)

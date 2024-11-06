@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +6,6 @@
     android:background="#A0BBD4"
     android:padding="16dp"
     tools:context=".MainActivity">
-
 
     <ImageButton
         android:id="@+id/imageView7"
@@ -20,211 +18,180 @@
         android:src="@drawable/baseline_arrow_circle_left_24"
         app:tint="#28336F" />
 
-
-    <ImageView
-        android:id="@+id/userImage"
-        android:layout_width="100dp"
-        android:layout_height="120dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Imagen de usuario"
-        android:src="@drawable/felipe" />
-
-
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/userImage"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Felipe Ortega Muñoz"
-        android:textColor="#28336F"
-        android:textSize="18sp" />
-
-
+    <!-- LinearLayout centrado en la pantalla -->
     <LinearLayout
         android:id="@+id/infoButtonsContainer"
         android:layout_width="300dp"
         android:layout_height="430dp"
-        android:layout_below="@id/userName"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
+        android:layout_centerInParent="true"
         android:background="#D4E6F1"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="16dp">
 
+    <EditText
+        android:id="@+id/email_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#28336F"
+        android:hint="Correo"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F" />
 
-        <EditText
-            android:id="@+id/email_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Correo"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
+    <EditText
+        android:id="@+id/birthdate_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#28336F"
+        android:hint="Fecha de Nacimiento"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F" />
 
+    <EditText
+        android:id="@+id/gender_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#28336F"
+        android:hint="Género"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F" />
 
-        <EditText
-            android:id="@+id/birthdate_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Fecha de Nacimiento"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
+    <EditText
+        android:id="@+id/speciality_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#28336F"
+        android:hint="Especialidad"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F" />
 
+    <EditText
+        android:id="@+id/address_field"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#B9C8DA"
+        android:hint="Dirección"
+        android:textColor="#28336F"
+        android:textColorHint="#28336F" />
 
-        <EditText
-            android:id="@+id/gender_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Género"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
-
-
-        <EditText
-            android:id="@+id/speciality_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#28336F"
-            android:hint="Especialidad"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F" />
-
-
-        <EditText
-            android:id="@+id/address_field"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#B9C8DA"
-            android:hint="Dirección"
-            android:textColor="#28336F"
-            android:textColorHint="#28336F"/>
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#B9C8DA"
-            android:text="Historial Paciente"
-            android:textColor="#28336F"/>
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/bottomNavBar"
+    <Button
+        android:id="@+id/button7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:elevation="8dp"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:backgroundTint="#B9C8DA"
+        android:text="Historial Paciente"
+        android:textColor="#28336F" />
+</LinearLayout>
+
+    <!-- Barra de navegación inferior -->
+<LinearLayout
+android:id="@+id/bottomNavBar"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_alignParentBottom="true"
+android:elevation="8dp"
+android:orientation="horizontal"
+android:padding="8dp">
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Inicio"
+        android:src="@drawable/baseline_home_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/imageButtonAgenda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Agenda"
+        android:src="@drawable/baseline_library_books_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Agenda"
+        android:textColor="#28336F"
+        android:textSize="10sp"
+        android:layout_marginTop="4dp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonNotifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Notificaciones"
+        android:src="@drawable/baseline_notifications_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notificaciones"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:orientation="vertical">
+    <ImageButton
+        android:id="@+id/buttonProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="Perfil"
+        android:src="@drawable/baseline_person_24"
+        app:tint="#28336F" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textColor="#28336F"
+        android:textSize="10sp" />
+</LinearLayout>
+</LinearLayout>
+    </RelativeLayout>
 
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonHome"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Inicio"
-                android:src="@drawable/baseline_home_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inicio"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
 
-        <!-- Botón de Agenda -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/imageButtonAgenda"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Agenda"
-                android:src="@drawable/baseline_library_books_24"
-                app:tint="#28336F" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Agenda"
-                android:textColor="#28336F"
-                android:textSize="10sp"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonNotifications"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Notificaciones"
-                android:src="@drawable/baseline_notifications_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notificaciones"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-            <ImageButton
-                android:id="@+id/buttonProfile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="Perfil"
-                android:src="@drawable/baseline_person_24"
-                app:tint="#28336F" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Perfil"
-                android:textColor="#28336F"
-                android:textSize="10sp" />
-        </LinearLayout>
-    </LinearLayout>
-</RelativeLayout>
 
 
 

@@ -38,6 +38,7 @@
     <!-- Contenedor de "Notificaciones" centrado en el diseño -->
 
     <!-- Barra de iconos en la parte inferior con nombres debajo de cada ícono -->
+
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="520dp"
